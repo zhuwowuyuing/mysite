@@ -17,5 +17,5 @@ urlpatterns = patterns('',
     #url(r'^search-form/$', 'books.views.search_form'),
     url(r'^search/$', 'books.views.search'),
     url(r'^contact/$', 'contact.views.contact'),
-    url(r'^contact/thanks$', 'contact.views.thanks'),
+    url(r'^contact/thanks/$', 'contact.views.thanks'),
 )

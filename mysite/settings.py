@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.csrf.CsrfResponseMiddleware',
+    #'django.middleware.csrf.CsrfResponseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -67,7 +67,7 @@ DATABASES = {
 	'NAME': 'villa',
 	'USER': 'vamei',
 	'PASSWORD': '3Gwap_2009',
-	'HOST':	'/var/lib/mysql/mysql.sock',
+	'HOST':	'192.168.0.35',
 	'PORT': '3306',
     }
 }
