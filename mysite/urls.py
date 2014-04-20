@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
+from django.views.generic import TemplateView
+from books.views import about_pages
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -18,4 +20,7 @@ urlpatterns = patterns('',
     url(r'^search/$', 'books.views.search'),
     url(r'^contact/$', 'contact.views.contact'),
     url(r'^contact/thanks/$', 'contact.views.thanks'),
+    url(r'^about/$', TemplateView.as_view(template_name='about.html')),
+    url(r'^about/(\w+)/$', about_pages),
 )
+

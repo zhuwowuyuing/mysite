@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from books.models import Book
+from django.http import Http404
+from django.template import TemplateDoesNotExist
+from django.views.generic.simple import direct_to_template
+
 # Create your views here.
 
 def search_form(request):
@@ -25,3 +29,9 @@ def search(request):
             books = Book.objects.filter(title__icontains=q)
             return render(request, 'books/search_results.html', {'books':books, 'query':q})
     return render(request, 'books/search_form.html', {'errors':errors})
+
+def about_pages(request, page):
+    try:
+        return direct_to_template(request, template="about/%s,html" % page)
+    except TemplateDoesNotExist:
+        raise Http404()
